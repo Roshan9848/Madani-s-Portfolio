@@ -5,82 +5,87 @@
 }
 
 body {
-  font-family: Arial, sans-serif;
-  background: #0f172a;
+  font-family: "Segoe UI", Arial, sans-serif;
+  background: linear-gradient(135deg, #0f172a, #020617);
   color: #e5e7eb;
 }
 
 /* Navbar */
 nav {
+  position: sticky;
+  top: 0;
+  background: #020617;
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 15px 40px;
-  background: #020617;
+  z-index: 100;
 }
 
-nav ul {
+.logo {
+  color: #38bdf8;
+}
+
+.nav-links {
   list-style: none;
   display: flex;
   gap: 20px;
 }
 
-nav a {
+.nav-links a {
   color: #e5e7eb;
   text-decoration: none;
+  font-weight: 500;
 }
 
-nav a:hover {
+.nav-links a:hover {
   color: #38bdf8;
 }
 
 /* Hero */
 .hero {
+  min-height: 80vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
   text-align: center;
-  padding: 80px 20px;
-}
-
-.avatar {
-  width: 64px;
-  height: 64px;
-  border-radius: 50%;
-  object-fit: cover;
-  border: 2px solid #38bdf8;
-  margin-bottom: 10px;
 }
 
 .hero h1 {
-  font-size: 40px;
+  font-size: 48px;
 }
 
 .hero p {
+  margin-top: 8px;
   color: #94a3b8;
-  margin-top: 5px;
 }
 
-.links {
+.hero-links {
   margin-top: 20px;
 }
 
-.links a {
-  margin: 0 10px;
-  padding: 8px 16px;
+.hero-links a {
+  margin: 10px;
+  padding: 10px 25px;
+  border-radius: 25px;
   border: 1px solid #38bdf8;
-  border-radius: 20px;
   color: #38bdf8;
   text-decoration: none;
 }
 
-.links a:hover {
+.hero-links a:hover {
   background: #38bdf8;
   color: #020617;
 }
 
 /* Sections */
 .section {
-  max-width: 900px;
+  max-width: 1000px;
   margin: 40px auto;
-  padding: 20px;
+  padding: 30px;
+  background: rgba(255, 255, 255, 0.04);
+  border-radius: 16px;
 }
 
 .section h2 {
@@ -88,18 +93,25 @@ nav a:hover {
   margin-bottom: 15px;
 }
 
-/* Skills Grid */
-.grid {
+/* Skills */
+.skills-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
-  gap: 10px;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 12px;
 }
 
-.grid span {
+.skills-grid span {
   background: #020617;
-  padding: 10px;
+  padding: 12px;
+  border-radius: 10px;
   text-align: center;
-  border-radius: 8px;
+  border: 1px solid #1e293b;
+}
+
+/* Projects */
+.project-list {
+  list-style: disc;
+  padding-left: 20px;
 }
 
 /* Footer */
@@ -108,4 +120,15 @@ footer {
   padding: 20px;
   background: #020617;
   color: #94a3b8;
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .nav-links {
+    display: none;
+  }
+
+  .hero h1 {
+    font-size: 36px;
+  }
 }
